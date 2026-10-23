@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkyCast - Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="weather-app">
+
+        <header class="header">
+            <a href="#" class="logo">
+                <span class="logo-icon">☀</span>
+                <span>SkyCast</span>
+            </a>
+
+            <span class="live-status">
+                <span class="status-dot"></span>
+                LIVE WEATHER
+            </span>
+        </header>
+
+        <section class="search-section">
+            <div class="search-heading">
+                <p class="eyebrow">WEATHER DASHBOARD</p>
+                <h1>Discover your <span>sky.</span></h1>
+                <p class="subtitle">
+                    Get real-time weather updates for any city.
+                </p>
+            </div>
+
+            <form class="search-form" id="searchForm">
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search a city..."
+                    value="London"
+                    aria-label="City name"
+                    required
+                >
+
+                <button type="submit" id="searchButton">
+                    Search <span>→</span>
+                </button>
+            </form>
+
+            <p id="message" class="message" role="status"></p>
+        </section>
+
+        <section class="weather-card" id="weatherCard">
+
+            <div class="weather-top">
+                <div>
+                    <p class="card-label">CURRENT WEATHER</p>
+
+                    <h2 id="cityName">London</h2>
+                    <p id="locationDetails" class="location-details">
+                        United Kingdom
+                    </p>
+                </div>
+
+                <div class="weather-date" id="localTime">
+                    Local time
+                </div>
+            </div>
+
+            <div class="weather-main">
+
+                <div class="temperature-section">
+                    <div class="temperature">
+                        <span id="temperature">--</span><span class="degree">°</span>
+                    </div>
+
+                    <p id="condition" class="condition">
+                        Loading weather...
+                    </p>
+
+                    <p class="feels-like">
+                        Feels like <span id="feelsLike">--°</span>
+                    </p>
+                </div>
+
+                <div class="weather-visual">
+                    <img
+                        id="weatherIcon"
+                        src="https://cdn.weatherapi.com/weather/64x64/day/116.png"
+                        alt="Weather condition"
+                    >
+                </div>
+
+            </div>
+
+            <div class="weather-divider"></div>
+
+            <div class="weather-stats">
+
+                <div class="stat">
+                    <div class="stat-icon humidity-icon">💧</div>
+                    <div>
+                        <p>Humidity</p>
+                        <h3 id="humidity">--%</h3>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon wind-icon">💨</div>
+                    <div>
+                        <p>Wind speed</p>
+                        <h3 id="windSpeed">-- km/h</h3>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon uv-icon">☀️</div>
+                    <div>
+                        <p>UV index</p>
+                        <h3 id="uvIndex">--</h3>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon visibility-icon">👁</div>
+                    <div>
+                        <p>Visibility</p>
+                        <h3 id="visibility">-- km</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="air-quality-card">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">BREATHE BETTER</p>
+                    <h2>Air quality</h2>
+                </div>
+
+                <span class="aqi-badge" id="aqiBadge">Loading</span>
+            </div>
+
+            <p class="air-quality-description" id="aqiDescription">
+                Checking current air quality...
+            </p>
+
+            <div class="air-quality-grid">
+
+                <div class="air-stat">
+                    <p>PM2.5</p>
+                    <h3 id="pm25">--</h3>
+                    <span>µg/m³</span>
+                </div>
+
+                <div class="air-stat">
+                    <p>PM10</p>
+                    <h3 id="pm10">--</h3>
+                    <span>µg/m³</span>
+                </div>
+
+                <div class="air-stat">
+                    <p>Ozone</p>
+                    <h3 id="ozone">--</h3>
+                    <span>µg/m³</span>
+                </div>
+
+                <div class="air-stat">
+                    <p>CO</p>
+                    <h3 id="carbonMonoxide">--</h3>
+                    <span>µg/m³</span>
+                </div>
+
+            </div>
+
+            <p class="air-quality-note">
+                Air quality readings are estimates. Local conditions and official
+                health guidance should also be considered.
+            </p>
+
+        </section>
+
+        <footer class="footer">
+            <p>Made for the love of weather <span>✦</span></p>
+            <p>Weather data by WeatherAPI.com</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
